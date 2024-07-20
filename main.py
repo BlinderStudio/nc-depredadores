@@ -54,7 +54,7 @@ async def display_table(channel):
     filtered_data = [row[:len(questions)] + [row[-4], row[-3]] for row in all_data[1:]]
 
     # Determinar el ancho máximo de cada columna
-    col_widths = [max(len(str(cell)) for cell in col) for col in zip(*[headers] + filtered_data)]
+    col_widths = [max(len(str(cell)) for cell in col) for cell in zip(*[headers] + filtered_data)]
 
     # Formatear los datos como una tabla
     def format_row(row):
